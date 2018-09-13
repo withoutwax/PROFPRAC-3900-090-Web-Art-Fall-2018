@@ -4,7 +4,7 @@
        url('/public_assets/fonts/04b03.ttf.svg#04b03') format('svg'),
        url('/public_assets/fonts/04b03.ttf.eot'),
        url('/public_assets/fonts/04b03.ttf.eot?#iefix') format('embedded-opentype'),
-       url('/public_assets/fonts/04b03.ttf') format('ttf');
+       url('/public_assets/fonts/04b03.ttf');
   font-weight: normal;
   font-style: normal;
 }
