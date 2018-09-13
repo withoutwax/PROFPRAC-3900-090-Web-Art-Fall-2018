@@ -1,0 +1,25 @@
+@font-face {
+  font-family: '04b03';
+  src: url('/public_assets/fonts/04b03.ttf.woff2') format('woff2'),
+       url('/public_assets/fonts/04b03.ttf.svg#04b03') format('svg'),
+       url('/public_assets/fonts/04b03.ttf.eot'),
+       url('/public_assets/fonts/04b03.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  color: PaleVioletRed;
+  font-family: '04b03';
+  font-size: 3em;
+}
+
+li {
+  color: PaleTurquoise;
+  font-family: '04b03';
+  font-size: 2em;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
