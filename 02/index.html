@@ -5,15 +5,27 @@
     <title>color!</title>
 
     <style media="screen">
-    body {
-      background-color: PapayaWhip;
-    }
+      @font-face {
+        font-family: '04b03';
+        src: url('/../public_assets/fonts/04b03.ttf.woff2') format('woff2'),
+             url('{{ site.baseurl }}/assets/fonts/04b03.ttf.svg#04b03') format('svg'),
+             url('{{ site.baseurl }}/assets/fonts/04b03.ttf.eot'),
+             url('{{ site.baseurl }}/assets/fonts/04b03.ttf.eot?#iefix') format('embedded-opentype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        font-family: 'Roboto Mono', monospace;
+        background-color: PapayaWhip;
+      }
       h1 {
         color: PaleVioletRed;
-
+        font-family: '04b03';
       }
       h2 {
         color: PaleTurquoise;
+        font-family: '04b03';
       }
       p {
         color: plum;
@@ -21,6 +33,8 @@
       footer {
         /* color: SeaShell; */
       }
+
+
     </style>
   </head>
   <body>
@@ -36,4 +50,5 @@
       </p>
     </section>
   </body>
+  <footer>&copy Will Kim 2018 All Right Reserved</footer>
 </html>
