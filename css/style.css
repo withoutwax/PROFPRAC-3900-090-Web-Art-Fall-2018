@@ -10,13 +10,13 @@
 
 h1 {
   color: PaleVioletRed;
-  font-family: '04b03', 'Roboto Mono', monospace;
+  font-family: '04b03', serif;
   font-size: 3em;
 }
 
 li {
   color: PaleTurquoise;
-  font-family: '04b03', 'Roboto Mono', monospace;
+  font-family: '04b03', serif;
   font-size: 2em;
 }
 
