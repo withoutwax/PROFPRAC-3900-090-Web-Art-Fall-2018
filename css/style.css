@@ -13,14 +13,43 @@ h1 {
   color: PaleVioletRed;
   font-family: '04b03', serif;
   font-size: 3em;
+  text-align: center;
+}
+h2 {
+  color: PaleVioletRed;
+  font-family: '04b03', serif;
+  font-size: 2em;
+  text-align: center;
+}
+h6 {
+  color: PaleTurquoise;
+  font-family: '04b03', serif;
+  font-size: 2em;
 }
 
 li {
   color: PaleTurquoise;
   font-family: '04b03', serif;
   font-size: 2em;
+  list-style: none;
 }
 
 body {
   font-family: 'Roboto Mono', monospace;
+}
+
+/* CSS-GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+.container-item {
+  border: black solid 2px
+}
+
+.container-assignment {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
 }
