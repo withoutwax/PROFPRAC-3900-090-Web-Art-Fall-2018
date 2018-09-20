@@ -1,0 +1,34 @@
+@font-face {
+  font-family: '04b03';
+  src: url('../public_assets/fonts/04B03.TTF'),
+       url('../public_assets/fonts/04b03.ttf.woff2') format('woff2'),
+       url('../public_assets/fonts/04b03.ttf.svg#04b03') format('svg');
+       /* url('public_assets/fonts/04b03.ttf.eot'), */
+       /* url('public_assets/fonts/04b03.ttf.eot?#iefix') format('embedded-opentype'); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  background-color: black;
+  color: white;
+
+  font-family: '04b03', serif;
+}
+
+.grid-container {
+  display: grid;
+  height: 95vh;
+
+  /* border: red solid 2px; */
+}
+
+.grid-element-01 {
+  align-self: flex-end;
+  justify-self: center;
+}
+.grid-element-02 {
+  align-self: flex-start;
+  justify-self: center;
+}
