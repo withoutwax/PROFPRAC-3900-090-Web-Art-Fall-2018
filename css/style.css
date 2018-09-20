@@ -64,7 +64,7 @@ p {
 /* CSS-GRID */
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(50px, 150px));
   grid-template-rows: auto;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
@@ -87,7 +87,7 @@ p {
 
 .container-assignment {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(175px, 250px));
   grid-template-rows: auto;
 
   padding-left: 20%;
