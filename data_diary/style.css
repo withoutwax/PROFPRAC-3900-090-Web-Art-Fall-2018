@@ -17,6 +17,10 @@ body {
   font-family: '04b03', serif;
   text-align: center;
 }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
 /* Landing Page ============================= */
 .grid-container {
@@ -84,6 +88,17 @@ body {
 }
 .intro03:hover .intro03_p::after {
   content: 'So far, I only have one category, but I will be updating more as time goes (hopefully).';
+}
+
+
+.about_01 span {
+  content: '01000001 01100010 01101111 01110101 01110100';
+}
+.about:hover .about_01 span {
+  display: none;
+}
+.about:hover .about_01::after {
+  content: 'About';
 }
 
 
