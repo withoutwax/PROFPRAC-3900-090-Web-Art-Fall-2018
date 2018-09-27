@@ -2,6 +2,20 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   color: #f7f7f7;
 }
+footer > a {
+  text-decoration: inherit;
+  color: #dbdbdb;
+  -webkit-transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+a::after {
+  -webkit-transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+a:hover {
+  color: inherit;
+  margin-left: 10px;
+}
 
 /* LANDING PAGE */
 .landing-container {
@@ -11,29 +25,89 @@ body {
 #button-01:hover ~ .banish {
   color: #dbdbdb;
 }
+.banish {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 #button-02:hover ~ .air-01 {
   color: #b9bbce;
 }
+.air-01 {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 #button-03:hover ~ .from {
   color: #cecece;
 }
+.from {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 #button-04:hover ~ .air-01 {
   color: #b9c1ce;
 }
 #button-05:hover ~ .enter {
   color: #b58080;
 }
+.enter {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 /* BUTTON HOVER SHADOW */
+.button {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.button::after {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .button:hover {
   box-shadow: 0px 0px 6px #cecece;
 }
+#button-05:hover {
+  padding-left: 10px;
+}
 
+/* ============================================= */
 /* MAIN POEM */
 .poem-container {
-  min-height: %100;
   display: grid;
-  grid-template-rows: 1fr auto;
+  height: 85vh;
 
-  text-align: center;
+  /* border: solid red 2px; */
+
+  justify-content: center;
+  align-content: center;
+  color: inherit;
+}
+
+.poem div:nth-child(odd) {
+  text-align: left !important;
+}
+.poem div:nth-child(even) {
+  text-align: right !important;
+}
+
+.poem > div {
+  /* color: inherit; */
+  -webkit-transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 10s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.poem > div::after {
+  -webkit-transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.poem > div:hover {
+  color: #9098a5;
+  /* -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05); */
+}
+
+footer {
   color: #9098a5;
 }
