@@ -1,0 +1,41 @@
+body {
+  font-family: 'Julius Sans One', sans-serif;
+  color: #f7f7f7;
+}
+
+/* LANDING PAGE */
+.landing-container {
+  /* background-color: red; */
+}
+#button-01:hover ~ .banish {
+  color: #dbdbdb;
+}
+#button-02:hover ~ .air-01 {
+  color: #b9bbce;
+}
+#button-03:hover ~ .from {
+  color: #cecece;
+}
+#button-04:hover ~ .air-01 {
+  color: #b9c1ce;
+}
+#button-05:hover ~ .enter {
+  color: #b58080;
+}
+/* BUTTON DECO */
+.button:hover {
+  box-shadow: 0px 0px 6px #cecece;
+}
+
+/* .banish:hover {
+
+} */
+.air-01 {
+
+}
+.from {
+
+}
+.air-02 {
+
+}
