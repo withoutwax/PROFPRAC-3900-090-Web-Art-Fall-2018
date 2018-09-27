@@ -5,7 +5,8 @@ body {
 
 /* LANDING PAGE */
 .landing-container {
-  /* background-color: red; */
+  margin-top: 45vh;
+  text-align: center;
 }
 #button-01:hover ~ .banish {
   color: #dbdbdb;
@@ -22,20 +23,17 @@ body {
 #button-05:hover ~ .enter {
   color: #b58080;
 }
-/* BUTTON DECO */
+/* BUTTON HOVER SHADOW */
 .button:hover {
   box-shadow: 0px 0px 6px #cecece;
 }
 
-/* .banish:hover {
+/* MAIN POEM */
+.poem-container {
+  min-height: %100;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
-} */
-.air-01 {
-
-}
-.from {
-
-}
-.air-02 {
-
+  text-align: center;
+  color: #9098a5;
 }
