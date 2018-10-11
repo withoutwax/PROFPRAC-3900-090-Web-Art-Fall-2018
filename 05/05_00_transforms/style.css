@@ -1,0 +1,37 @@
+body {
+    background-color: skyBlue;
+}
+div {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    background-color: red;
+
+    text-align: center;
+}
+
+#box-1{
+    background-color: green;
+    margin-top: 100px;
+    transform: rotate(30deg) scale(1, 1);
+}
+
+#box-2 {
+    background-color: orange;
+    transform: skewY(31deg);
+}
+
+#box-3 {
+    background-color: lavender;
+    transform: rotatez(80deg);
+}
+
+#box-4 {
+    transform: translate(50px, -250px) skew(10deg, -50deg);
+}
+
+#box-5 {
+    background-color: thistle;
+    transform: perspective(30px) rotateY(30deg);
+}

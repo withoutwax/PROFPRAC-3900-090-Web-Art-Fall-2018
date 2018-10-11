@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WEB MONTAGE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>WEB MONTAGE</h1>
+
+    <p>Web Montage using drag api</p>
+    <!-- <form action="/action_page.php"> -->
+    <input onchange="imageUpload(event)" type="file" name="pic" accept="image/*">
+    <!-- <input onclick="imageUpload(this)" type="submit"> -->
+    <!-- </form> -->
+    <img id="imageOutput" width="500" />
+
+    <!-- <button onclick="createImage()" type="button" name="button"></button> -->
+
+    <!-- TEST -->
+    <!-- <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"></p> -->
+    <!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
+    <!-- <p><img id="output" width="200" /></p> -->
+    <!-- TEST -->
+
+    <img class="image" id="image01" src="assets/01.jpg" onload="dragElement(event)" alt="Mark-Weaver-01">
+    <img class="image" id="image02" src="assets/02.jpg" onload="dragElement(event)" alt="Mark-Weaver-02">
+    <img class="image" id="image03" src="assets/03.jpeg" onload="dragElement(event)" alt="Mark-Weaver-03">
+    <img class="image" id="image04" src="assets/04.jpeg" onload="dragElement(event)" alt="Mark-Weaver-04">
+    <img class="image" id="image05" src="assets/05.jpg" onload="dragElement(event)" alt="Mark-Weaver-05">
+
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>

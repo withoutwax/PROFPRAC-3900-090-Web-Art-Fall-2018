@@ -1,0 +1,28 @@
+/* transiton will happen on a :hover */
+#image-1 {
+    margin: 100px;
+    transition: transform 1s ease-in;
+
+}
+
+#image-1:hover {
+    transform: scale(2, 1.5);
+}
+
+#text-1 {
+    font-size: 200px;
+    color: white;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px red;
+    transition: all 1s ease-in-out;
+
+}
+
+#text-1:active {
+    text-shadow: 10px 15px 20px blue, -10px -15px 20px yellow ;
+    letter-spacing: 15px;
+}
+
+#image-3 {
+    background-color: rgba(0, 100, 100, 0.3);
+}
