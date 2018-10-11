@@ -1,9 +1,9 @@
 # Web Montage
-### Description
-**Web Montage** was an assignment for the class to create an art work which mimics the art work of montages. Hence a digital montage.  
-I personally wanted to create something functional for this project: I decided to add the ability for the user in a way that users could configure and modify the Web Montages by altering the positions and the alpha settings, instead of just displaying a static piece of work.
+## Description
+**Web Montage** is an assignment for the class to create an art work which mimics the art work of montages. Hence a digital montage.  
+I personally wanted to create something functional for this project: I decided to add the ability for the user not only create the montage, but able to manipulate and play around with the montage. I added the functionality in a way that users could configure and modify the Web Montages by altering the positions and the alpha settings, instead of just displaying a static piece of work.
 
-### Functionality
+## Functionality
 There's three functionality with the web application:
 1. Drag and position an element;
 2. Upload a new image;
@@ -11,15 +11,15 @@ There's three functionality with the web application:
 
 Imagine this app as a digital sketchbook that you can play around with.
 
-### Tools:
+## Tools:
 **Language:** HTML, CSS, JavaScript  
 **APIs:** JavaScript Drag API  
 **Fonts:** Google Web Fonts - ['PT Mono'](https://fonts.google.com/specimen/PT+Mono)
 
-### Useful Codes:
+## Useful Codes:
 One of the things that I learned which was useful was the Drag API in JavaScript and the image upload system. Also Changing the alpha setting was pretty fun too.  
 
-#### Drag API:
+### Drag API:
 **HTML**
 ```html
 <img class="image" id="image01" src="assets/01.jpg" onload="dragElement(event)" alt="Mark-Weaver-01">
@@ -66,7 +66,7 @@ function dragElement(elmnt) {
 }
 ```
 
-#### Image Upload
+### Image Upload
 **HTML**
 ```HTML
 <input type="file" name="image" id="imageUpload" onchange="imageUpload(event)" accept="image/*" style="display: none;"/>
@@ -104,7 +104,7 @@ function createImage() {
 }
 ```
 
-#### Alpha Control
+### Alpha Control
 **HTML**
 ```html
 <div class="image-controller" id="image-controller">
@@ -145,5 +145,5 @@ function createAlphaController(id) {
 
 ```
 
-### Citations:
-All the images are by Mark Weaver - discovered using Google Image Searches. I do not own them. Credits to the Author.
+## Citations:
+All the images are by Mark Weaver - discovered using Google Image Searches. I do not own them. Credit to the Author.
