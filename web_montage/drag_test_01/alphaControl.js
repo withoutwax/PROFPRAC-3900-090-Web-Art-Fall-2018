@@ -21,10 +21,17 @@ function createAlphaController(id) {
     input.setAttribute("onchange", "updateAlpha(this.value, event)");
     input.setAttribute("class", "slider");
     input.setAttribute("id", "alpha" + id);
-    document.body.appendChild(input);
+
+    // let image_controller = document.getElementsByClassName('image-controller');
+    // image_controller.insertAdjacentHTML('afterbegin', input);
+    document.getElementById("image-controller").appendChild(input);
 
     let referenceNode = document.querySelector('#alpha'+id);
     let label = document.createElement('p');
     label.innerHTML = id;
+    let parentNode = document.getElementById('image-controller');
     referenceNode.parentNode.insertBefore(label, referenceNode);
+
+    // ar d1 = document.getElementById('one');
+    // d1.insertAdjacentHTML('beforeend', '<div id="two">two</div>');
 }

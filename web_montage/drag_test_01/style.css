@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  border: 1px black solid;
+  /* border: 1px black solid; */
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -50,7 +50,7 @@ body {
   grid-row: 1 / 4;
   justify-self: flex-end;
 
-  border: red 1px solid;
+  /* border: red 1px solid; */
 }
 .slidecontainer {
     width: 100%; /* Width of the outside container */

@@ -22,21 +22,15 @@
 
 
       <!-- IMAGE CONTROL - SLIDER -->
-      <div class="image-controller">
+      <div class="image-controller" id="image-controller">
 
-        <div class="slideContainer">
+        <!-- <div class="slideContainer">
           <input type="range" min="0" max="1" value="0.5" step="0.01" onchange="updateAlpha(this.value, event)" class="slider" id="alphaRange">
-        </div>
+        </div> -->
 
       </div>
     </main>
     <!-- <button onclick="createImage()" type="button" name="button"></button> -->
-
-    <!-- TEST -->
-    <!-- <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)"></p> -->
-    <!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
-    <!-- <p><img id="output" width="200" /></p> -->
-    <!-- TEST -->
 
     <img class="image" id="image01" src="assets/01.jpg" onload="dragElement(event)" alt="Mark-Weaver-01">
     <img class="image" id="image02" src="assets/02.jpg" onload="dragElement(event)" alt="Mark-Weaver-02">
