@@ -1,24 +1,10 @@
-let numImages = 5;
-
-// for (let i = 1; i < numImages; i++) {
-//   dragElement(document.getElementById("image0"+i.toString()));
-//   // dragElement(document.getElementById("image02"));
-//   // dragElement(document.getElementById("image03"));
-//   // dragElement(document.getElementById("image04"));
-//   // dragElement(document.getElementById("image05"));
-// }
-
 function dragElement(elmnt) {
   elmnt = document.getElementById(event.target.id);
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
   elmnt.onmousedown = dragMouseDown;
-  // if (document.getElementById(elmnt.id + "header")) {
-  //   /* if present, the header is where you move the DIV from:*/
-  //   document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  // } else {
-  //   /* otherwise, move the DIV from anywhere inside the DIV:*/
-  //   elmnt.onmousedown = dragMouseDown;
-  // }
+
+  createAlphaController(elmnt.id);
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -50,42 +36,3 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-
-let imageUpload = function(event) {
-  // console.log('numImages', numImages);
-  console.log("image is uploaded");
-  console.log("event", event);
-  console.log("files_array(images array)", event.target.files);
-
-  let image = document.getElementById('imageOutput');
-  image.src = URL.createObjectURL(event.target.files[0]);
-  numImages += 1;
-  image.className = "image";
-  image.id = "image0"+numImages.toString();
-  image.onload = "dragElement(event)"
-
-  image.onload = function() {
-    dragElement(event);
-  }
-  createImage();
-}
-
-function createImage() {
-    console.log("clicked");
-    let img = document.createElement('img'); //new Image() :
-    img.setAttribute("id", "imageOutput");
-    img.setAttribute("width", "500");
-    document.body.appendChild(img);
-}
-// function myFunction() {
-//     var x = document.createElement("IMG");
-//     x.setAttribute("src", "img_pulpit.jpg");
-//     x.setAttribute("width", "304");
-//     x.setAttribute("height", "228");
-//     x.setAttribute("alt", "The Pulpit Rock");
-//     document.body.appendChild(x);
-// }
-// var loadFile = function(event) {
-// 	var image = document.getElementById('output');
-// 	image.src = URL.createObjectURL(event.target.files[0]);
-// };

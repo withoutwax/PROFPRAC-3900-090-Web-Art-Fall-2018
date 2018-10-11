@@ -4,17 +4,32 @@
     <meta charset="utf-8">
     <title>WEB MONTAGE</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="alphaControl.js"></script>
+    <script type="text/javascript" src="imageUpload.js"></script>
   </head>
   <body>
-    <h1>WEB MONTAGE</h1>
+    <main class="container">
+      <h1>WEB MONTAGE</h1>
 
-    <p>Web Montage using drag api</p>
-    <!-- <form action="/action_page.php"> -->
-    <input onchange="imageUpload(event)" type="file" name="pic" accept="image/*">
-    <!-- <input onclick="imageUpload(this)" type="submit"> -->
-    <!-- </form> -->
-    <img id="imageOutput" width="500" />
+      <p>Web Montage using drag api</p>
 
+      <input type="file" name="image" id="imageUpload" onchange="imageUpload(event)" accept="image/*" style="display: none;"/>
+        <!-- FOR DECORATION PURPOSES -->
+      <label id="imageUploadDeco" for="imageUpload" style="cursor: pointer;">Choose an image</label>
+
+      <img id="imageOutput" width="500"/>
+
+
+      <!-- IMAGE CONTROL - SLIDER -->
+      <div class="image-controller">
+
+        <div class="slideContainer">
+          <input type="range" min="0" max="1" value="0.5" step="0.01" onchange="updateAlpha(this.value, event)" class="slider" id="alphaRange">
+        </div>
+
+      </div>
+    </main>
     <!-- <button onclick="createImage()" type="button" name="button"></button> -->
 
     <!-- TEST -->
@@ -29,6 +44,5 @@
     <img class="image" id="image04" src="assets/04.jpeg" onload="dragElement(event)" alt="Mark-Weaver-04">
     <img class="image" id="image05" src="assets/05.jpg" onload="dragElement(event)" alt="Mark-Weaver-05">
 
-    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
