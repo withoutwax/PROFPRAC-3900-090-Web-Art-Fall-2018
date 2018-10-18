@@ -8,6 +8,7 @@ class Enemies extends Ball {
         this.angle = Math.floor(Math.random()*359);
     }
 
+    // DRAWING THE BALL OF THE ENEMY
     draw(ctx) {
         ctx.beginPath();
         ctx.arc(this.enemyX, this.enemyY, this.radius, 0, Math.PI*2);
@@ -15,14 +16,12 @@ class Enemies extends Ball {
         ctx.fill();
         ctx.closePath();
     }
+
     console() {
         return this.speed;
     }
-    move() {
-        // console.log('enemyX', enemyX, 'enemyY', enemyY);
-        // console.log('dx', dx, 'dy', dy);
-        // console.log(canvas.width);
 
+    move() {
         if(this.enemyX+(this.radius/2) > canvas.width || this.enemyX-(this.radius/2) < 0) {
             this.speed = -this.speed;
             this.angle = Math.floor(Math.random()*180);
