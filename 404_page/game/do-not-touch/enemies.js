@@ -22,18 +22,15 @@ class Enemies extends Ball {
     }
 
     move() {
-        if(this.enemyX+(this.radius/2) > canvas.width || this.enemyX-(this.radius/2) < 0) {
+        if(this.enemyX+this.radius > canvas.width || this.enemyX-this.radius < 0 || this.enemyY+this.radius > canvas.height || this.enemyY-this.radius < 0) {
             this.speed = -this.speed;
-            this.angle = Math.floor(Math.random()*180);
-        }
-        if(this.enemyY+(this.radius/2) > canvas.height || this.enemyY-(this.radius/2) < 0) {
-            this.speed = -this.speed;
-            this.angle = Math.floor(Math.random()*180);
+            this.angle = this.angle+120; //Math.floor(Math.random()*270) + 180;
         } else {
             // COLLISION DETECTION
             if ((this.enemyX + this.radius/2) > (x - ballRadius/2) && (this.enemyX - this.radius/2) < (x + ballRadius/2) && (this.enemyY + this.radius) > (y - ballRadius/2) && (this.enemyY - this.radius/2) < (y + ballRadius/2)) {
                 // alert("You died!");
                 console.log("Collision Detected!");
+                pause = true;
             }
         }
         this.enemyX += this.speed * Math.cos(this.angle * Math.PI / 180);

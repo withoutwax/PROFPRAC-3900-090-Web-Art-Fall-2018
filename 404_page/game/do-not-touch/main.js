@@ -1,6 +1,7 @@
 let canvas, ctx;
-let score = 0;
-let lives = 3;
+const score = 0;
+const lives = 3;
+let pause = false;
 
 // OOP
 let ball;
@@ -8,18 +9,21 @@ let enemy;
 let x, y; // FOR MOUSE CURSOR
 let enemyX;
 let enemyY;
-let noEnemies = 2;
+const noEnemies = 2;
 let enemies = [];
-let ballRadius = 10;
-let enemyRadius = 3;
+const ballRadius = 10;
+const enemyRadius = 3;
 
 let displayScore;
 let displayLife;
 
+// LOAD WINDOW
 window.onload = function() {
     canvas = document.getElementById("gameCanvas");
     ctx = canvas.getContext("2d");
     canvas.addEventListener("mousemove", mouseMoveHandler, false);
+
+    // game = setInterval(draw, 1000/framesPerSecond);
 
     // Starting point for the Enemies
     enemyX = canvas.width/2;
@@ -28,18 +32,26 @@ window.onload = function() {
     // Create a Cursor Ball
     ball = new Ball(x, y, ballRadius);
     // Create Multiple incidence of Enemies
+
     for (let i = 0; i < noEnemies; i++) {
         enemy = new Enemies(enemyX, enemyY, 4, enemyRadius);
         enemies.push(enemy);
     }
 
     // DISPLAY SCORE & LIFE
-    displayScore = new Score(score, "Arial", "16px", "#adadad", 8, 40);
+    displayScore = new Score(score, "Arial", "16px", "#adadad", 8, 20);
     displayLife = new Lives(score, "Arial", "16px", "#adadad", canvas.width-65, 20)
 
     // REFRESH FRAMES & DRAW
-    let framesPerSecond = 30;
-    setInterval(draw, 1000/framesPerSecond);
+    // PAUSING GAME AND REPLAY
+    if (pause == false) {
+        console.log("pause: false")
+        let framesPerSecond = 30;
+        setInterval(draw, 1000 / framesPerSecond);
+    } else {
+        console.log("The game is paused!");
+        clearTimeout(draw);
+    }
 }
 
 // CONFIGURING THE MOUSE MOVEMENT
@@ -52,19 +64,6 @@ function mouseMoveHandler(e) {
     y = e.clientY;
 }
 
-// DISPLAY SCORE
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#adadad";
-  ctx.fillText("Score: "+score, 8, 20);
-}
-// DISPLAY LIVES
-function drawLives() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#adadad";
-  ctx.fillText("Lives: "+lives, canvas.width-65, 20);
-}
-
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // USE TO REFRESH EACH PAGE (so it's not a paint job)
@@ -75,11 +74,8 @@ function draw() {
         enemies[i].draw(ctx);
         enemies[i].move();
     }
-
-    // drawScore();
-    // drawLives();
-    // timer();
-
     displayScore.display(ctx);
     displayLife.display(ctx);
+
+    requestAnimationFrame(draw);
 }
