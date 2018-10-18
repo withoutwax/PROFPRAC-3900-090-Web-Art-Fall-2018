@@ -8,18 +8,21 @@
     </head>
     <body>
         <main>
-          <div class="game-area"></div>
+          <div class="game-area">
+              <canvas id="gameCanvas" width="480" height="320"></canvas>
+
+          </div>
           <div class="warning-area">
-            <h1>There is no Internet connection</h1>
-            <p>Try:</p>
-            <ul>
-                <li>Checking the network cables, or router</li>
-                <li>Resetting the modem or router</li>
-                <li>Reconnecting to Wi-Fi</li>
-            </ul>
-            <p>ERR_INTERNET_DISCONNECTED</p>
+            <h1>HTTP Error 404</h1>
+            <h3>404 Not Found</h3>
+            <p>The Web server cannot find the file or script you asked for. Please check the URL to ensure that the path is correct.</p>
+            <br>
+            <hr>
+            <p>Please contact the server's administrator if this problem persists.</p>
+            <p>...or you can actually click this link and play a <a>game</a></p>
           </div>
         </main>
-
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="./game/do-not-touch/main.js"></script>
     </body>
 </html>
