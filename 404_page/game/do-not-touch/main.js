@@ -1,13 +1,17 @@
 let canvas, ctx;
-let ballRadius = 10;
-let enemyRadius = 3;
 let score = 0;
 let lives = 3;
+
+// OOP
+let ball;
+let enemy;
 let x, y; // FOR MOUSE CURSOR
 let enemyX, enemyY; // FOR ENEMY
 let noEnemies = 2;
-let dx = 4; // Enemy Ball Speed x-axis
-let dy = -4; // Enemy Ball Speed y-axis
+let enemies = [];
+let ballRadius = 10;
+let enemyRadius = 3;
+
 
 window.onload = function() {
     canvas = document.getElementById("gameCanvas");
@@ -16,10 +20,20 @@ window.onload = function() {
     enemyX = canvas.width/2;
     enemyY = canvas.height/2;
 
+    canvas.addEventListener("mousemove", mouseMoveHandler, false);
+
+    ball = new Ball(x, y, ballRadius);
+
+    // Create Multiple incidence of Enemies
+    for (let i = 0; i < noEnemies; i++) {
+        enemy = new Enemies(enemyX, enemyY, 4, enemyRadius);
+        enemies.push(enemy);
+    }
+
+    console.log(enemy.console());
+
     let framesPerSecond = 30;
     setInterval(draw, 1000/framesPerSecond);
-
-    canvas.addEventListener("mousemove", mouseMoveHandler, false);
 }
 
 // CONFIGURING THE MOUSE MOVEMENT
@@ -32,17 +46,8 @@ function mouseMoveHandler(e) {
     y = e.clientY;
 }
 
-// DRAWING THE BALL ON CURSOR
-function drawBall() {
-    ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#3d3d3d";
-    ctx.fill();
-    ctx.closePath();
-}
-
 // DRAWING THE BALL OF THE ENEMY
-function drawEnemyBall(randomX, randomY) {
+function drawEnemyBall() {
     ctx.beginPath();
     ctx.arc(enemyX, enemyY, enemyRadius, 0, Math.PI*2);
     ctx.fillStyle = "#3d3d3d";
@@ -57,14 +62,11 @@ function drawEnemyBall(randomX, randomY) {
       dy = -dy;
     } else {
         // COLLISION DETECTION
-
         if ((enemyX + enemyRadius/2) > (x - ballRadius/2) && (enemyX - enemyRadius/2) < (x + ballRadius/2) && (enemyY + enemyRadius) > (y - ballRadius/2) && (enemyY - enemyRadius/2) < (y + ballRadius/2)) {
             // alert("You died!");
             console.log("Collision Detected!");
         }
-
     }
-
     enemyX += dx;
     enemyY += dy;
 }
@@ -90,20 +92,20 @@ function timer() {
     score = setTimeout(add, 1000);
 }
 
-
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // USE TO REFRESH EACH PAGE (so it's not a paint job)
-    drawBall();
+    // drawBall();
+    ball.draw(ctx);
 
-    for (let i = 0; i < noEnemies; i++) {
-        let randomX = 1;
-        let randomY = Math.floor(Math.random() * 2);
-        drawEnemyBall(randomX, randomY);
+    // Draw all the Enemies created
+    for (let i = 0; i < enemies.length; i++) {
+        enemies[i].draw(ctx);
+        enemies[i].move();
     }
-
+    // enemy.draw(ctx);
+    // enemy.move();
     drawScore();
     drawLives();
     timer();
-
     // requestAnimationFrame(draw);
 }

@@ -1,11 +1,46 @@
-class Enemies {
-    constructor(x, y, speed, angle, width, height, color) {
-        this.x = x;
-        this.y = y;
+class Enemies extends Ball {
+    constructor(enemyX, enemyY, speed, radius) {
+        super(radius);
+        this.enemyX = enemyX;
+        this.enemyY = enemyY;
         this.speed = speed;
-        this.angle = angle;
-        this.width = width;
-        this.height = height;
-        this.color = color;
+        this.radius = radius;
+        this.angle = Math.floor(Math.random()*359);
     }
+
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.enemyX, this.enemyY, this.radius, 0, Math.PI*2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+    }
+    console() {
+        return this.speed;
+    }
+    move() {
+        // console.log('enemyX', enemyX, 'enemyY', enemyY);
+        // console.log('dx', dx, 'dy', dy);
+        // console.log(canvas.width);
+
+        if(this.enemyX+(this.radius/2) > canvas.width || this.enemyX-(this.radius/2) < 0) {
+            this.speed = -this.speed;
+            this.angle = Math.floor(Math.random()*180);
+        }
+        if(this.enemyY+(this.radius/2) > canvas.height || this.enemyY-(this.radius/2) < 0) {
+            this.speed = -this.speed;
+            this.angle = Math.floor(Math.random()*180);
+        } else {
+            // COLLISION DETECTION
+            if ((this.enemyX + this.radius/2) > (x - ballRadius/2) && (this.enemyX - this.radius/2) < (x + ballRadius/2) && (this.enemyY + this.radius) > (y - ballRadius/2) && (this.enemyY - this.radius/2) < (y + ballRadius/2)) {
+                // alert("You died!");
+                console.log("Collision Detected!");
+            }
+        }
+        this.enemyX += this.speed * Math.cos(this.angle * Math.PI / 180);
+        this.enemyY += this.speed * Math.sin(this.angle * Math.PI / 180);
+    }
+
+
+
 }
