@@ -4,6 +4,7 @@ Simple drawing app for other students at SAIC to join / collaborate!
 
 ## Our current state (of the Art)
 ![state_of_the_art](./readme_assets/state_of_the_art.png)
+![state_of_the_art](./readme_assets/state_of_the_art_02.png)   
 This is what happened after letting students for 15 minutes.
 
 ## Running the server
