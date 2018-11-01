@@ -1,0 +1,16 @@
+{
+  "name": "server_inclass_drawing",
+  "version": "1.0.0",
+  "description": "PROFPRAC Class Server w/ Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Will Kim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "p5-manager": "^0.4.2",
+    "socket.io": "^2.1.1"
+  }
+}
