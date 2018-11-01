@@ -7,6 +7,10 @@ function setup() {
 	socket = io.connect('http://localhost:3000');
 	socket.on('mouse', newDrawing);
 
+	red = random(255);
+	green = random(255);
+	blue = random(255);
+
 	createCanvas(800, 800);
 
 	background(20);
